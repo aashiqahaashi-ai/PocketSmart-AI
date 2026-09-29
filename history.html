@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+{% block content %}
+<h1>Recommendation History</h1><div id="historyList"><p>Loading...</p></div>
+<script>
+(async()=>{const r=await fetch("/history"); const data=await r.json(); const box=document.getElementById("historyList");
+if(!data.length){box.innerHTML="<p>No recommendations yet.</p>";return;}
+box.innerHTML=data.map(x=>`<article class="card"><h3>${x.planner_type.toUpperCase()} planner</h3><p>${new Date(x.created_at).toLocaleString()}</p><p>${x.result.summary||""}</p></article>`).join("");
+})();
+</script>
+{% endblock %}

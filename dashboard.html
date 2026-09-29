@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - PocketSmart AI{% endblock %}
+{% block content %}
+<div class="page-head"><div><span class="badge">Dashboard</span><h1>Hello, {{ user.name }} 👋</h1><p>Choose a planner to create a budget-aware recommendation.</p></div></div>
+<div class="grid three">
+<a class="card link-card" href="/home-planner"><h2>🏠 Home</h2><p>Furniture, lighting and decor.</p></a>
+<a class="card link-card" href="/party-planner"><h2>🎉 Party</h2><p>Food, venue and decoration.</p></a>
+<a class="card link-card" href="/jewelry-planner"><h2>💎 Jewelry</h2><p>Occasion, style and outfit matching.</p></a>
+</div>
+{% endblock %}
